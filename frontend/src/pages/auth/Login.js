@@ -31,6 +31,8 @@ const Login = ({ setCookie }) => {
           }
         }, {});
 
+        console.log('JSESSIONID:', cookies.JSESSIONID);
+
         setCookie(cookies.JSESSIONID);
         alert('Login successful');
 

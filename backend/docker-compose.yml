@@ -3,8 +3,8 @@ version: '3.8'
 services:
   backend:
     build:
-      context: ./backend
-      dockerfile: ./Dockerfile
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     volumes:
@@ -21,8 +21,8 @@ services:
 
   frontend:
     build:
-      context: ./frontend
-      dockerfile: ./Dockerfile
+      context: ../frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
@@ -33,7 +33,7 @@ services:
 
   minio:
     image: minio/minio
-    command: server /minio-image/storage --console-address :9001
+    command: server /data --console-address :9001
     ports:
       - "9000:9000"
       - "9001:9001"
